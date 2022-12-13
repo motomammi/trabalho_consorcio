@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1670887430 source:c:\test\consorcio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"interface.h"
+
+1670886087 c:\test\consorcio\interface.h
+	<stdio.h>
+	<conio.h>
+	<string.h>
+	<windows.h>
+
+1670887270 source:c:\test\consorcio\interface.c
+	"interface.h"
+
