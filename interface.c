@@ -36,7 +36,9 @@ void Borda(int x, int y, int largura, int altura, int tipo, int sombra)
     char C[][6] = {"\xda\xbf\xc0\xd9\xc4\xb3",
                  "\xc9\xbb\xc8\xbc\xcd\xba"};
 
-    textcolor(LIGHT_CYAN);
+    textcolor(WHITE);
+    textbackground(BLACK);
+    //textcoloreback(WHITE, BLACK);
     int i,j;
     gotoxy(x, y);
     printf("%c", C[tipo][0]);
@@ -71,20 +73,18 @@ int getTecla(){
 }
 
 int menu(char opcoes[][51], int x[], int y[], int opcao, int n){
-
-    int i, tecla; textbackground(LIGHT_CYAN); textcolor(WHITE);
-
+    int i, tecla; textbackground(WHITE); textcolor(WHITE);
     for(i = 0; i < n; i++){
         gotoxy(x[i], y[i]); printf("%s", opcoes[i]);
     }
     do{
-        textbackground(WHITE);textcolor(LIGHT_CYAN);
+        textbackground(BLACK);textcolor(WHITE);
+        //textbackground(WHITE); textcolor(BLACK);
         gotoxy(x[opcao], y[opcao]); printf("%s", opcoes[opcao]);
-
         tecla = getTecla();
-
         if(tecla == 13)return opcao;
-        textbackground(LIGHT_CYAN);textcolor(WHITE);
+        //textbackground(BLACK);textcolor(WHITE);
+        textbackground(WHITE);textcolor(BLACK);
         gotoxy(x[opcao], y[opcao]); printf("%s", opcoes[opcao]);
         if(tecla == TEC_BAIXO || tecla == TEC_DIR)opcao++;
         if(tecla == TEC_CIMA || tecla == TEC_ESQ)opcao--;
@@ -92,4 +92,10 @@ int menu(char opcoes[][51], int x[], int y[], int opcao, int n){
         if(opcao >= n)opcao = 0;
     }while(tecla != 27);
     return -1;
+}
+
+void desbugar(){
+    textbackground(BLACK);
+    textbackground(RED);
+    return;
 }
