@@ -6,12 +6,24 @@ struct dadosconsorcio{
     int CPF[20];
     char Endereco[51];
     int CEP[20];
+    char ID[20];
 
 };
+
+int novamentbusca;
+
 typedef struct dadosconsorcio Dados;
-Dados DigitarDados();
+Dados DigitarDados(int n);
 void AtivarCliente();
+int Contagem();
+Dados PesquisarUsuario();
 void TelaPaciente();
-//ctrl+shift+f procurar em todos aquirvos
+void printarDados(Dados X);
+void BuscarCliente();
+void Interface(int n);
+void caixa();
+void listagem();
+void SimularConsorcio(int n);
+void AlterarDados(Dados P, int n);
 
 #endif // CONSORCIO_H_INCLUDED
