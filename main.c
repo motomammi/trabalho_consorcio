@@ -1,35 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "interface.h"
+#include "consorcio.h"
 
 void TelaPrincipal(){
-    Borda(0, 0, 79, 23, 1, 0);
-    gotoxy(32, 1);printf("CLINICA MEDICA");
+    Borda(0, 0, 118, 29, 1, 0);
+    gotoxy(51, 3);printf("CONSORCIO YALEN");
 }
-
-char opcoes[][51] = {"Simular consorcio", "Compra de consorcio","Nossas politicas", "Fechar" };
-int x[] = {1, 1, 1, 1 };//pra que que serve?
-int y[] = {3, 4, 5, 6};
 
 int main()
 {
-    int escolha = 0;
-    do{
-    TelaPrincipal();
-    escolha = menu(opcoes, x, y, escolha, 4);
-    if(escolha == 0){
+    char opcoes[][51] = {"Cadastrar", "Pesquisar", "Fazer Consorcio","Listar Consorcios", "Encerrar Programa" };
+    int escolha = 0, mn;
+    int X[]= {53, 53, 50, 49, 49};
+    int Y[]= {9, 12, 15, 18, 21};
 
-    }
-    if(escolha == 1);
-    if(escolha == 2);
-    if(escolha == 3){
-        Borda(28, 10, 21, 2, 0, 0);
-        gotoxy(29, 11);
-        printf("Obrigado pelo acesso!");
-        break;
-    }
-    }while(escolha != -1);
+    while(1){
+        system("cls");
 
+        TelaPrincipal();
+
+        Borda(52,8,9,2,0,0);
+        Borda(52,11,9,2,0,0);
+        Borda(49,14,15,2,0,0);
+        Borda(48,17,17,2,0,0);
+        Borda(48,20,17,2,0,0);
+
+        escolha = menu(opcoes, X, Y, escolha, 5);
+
+        if (escolha == 0){
+            AtivarCliente();
+            textbackground(BLACK);
+        }
+
+        else if(escolha == 1){
+            BuscarCliente();
+            textbackground(BLACK);
+        }
+
+        else if(escolha == 2){
+            Interface(1);
+            //BuscarCliente();
+            listagem();
+        }
+
+        else if (escolha == 4){
+            gotoxy(0,25);
+            exit(1);
+        }
+    }
 
     gotoxy(0, 25);
     return 0;
