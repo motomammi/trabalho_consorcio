@@ -32,6 +32,7 @@ void gotoxy(int x, int y);
 void Borda();
 int menu(char opcoes[][51], int x[], int y[], int opcao, int n);
 int getTecla();
+void desbugar();
 
 #endif // INTERFACE_H_INCLUDED
 
